@@ -14,6 +14,8 @@ export class RegisterPageComponent implements OnInit {
     firstName: null,
     lastName: null,
   }
+  
+  submitted = false;
 
   constructor(private http: HttpClient,
     private route: Router) { }
@@ -29,7 +31,8 @@ export class RegisterPageComponent implements OnInit {
       console.log(this.form);
 
       this.http.post("https://localhost:7086/api/Login/register", this.form, {responseType:'text'}).subscribe(data => {
-        this.route.navigate(['/login'])
+        this.submitted = true;
+		this.route.navigate([''])
       })
     }
 

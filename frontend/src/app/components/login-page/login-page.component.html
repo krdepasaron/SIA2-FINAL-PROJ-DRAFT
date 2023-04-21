@@ -1,3 +1,38 @@
+<!---
+<br> <br> <br> <br>
+<div class="container-fluid">
+  <div class="d-flex justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">Login</div>
+        <div class="card-body">
+          <form name="form" (ngSubmit)="onSubmit()" #f="ngForm" novalidate>
+            <div class="form-group">
+              <div class="input-field" [class.error] = "loginForm.controls['username'].dirty && loginForm.hasError('required','username')">
+              <label for="username">Username</label>
+              <input [(ngModel)]="form.username" #username="ngModel"
+               name="username" required type="text" class="form-control" id="username" placeholder="Enter username">
+            </div>
+          </div>
+            <small *ngIf="loginForm.controls['username'].dirty && loginForm.hasError('required','username')" 
+            class="text-danger">*Username is required</small>
+            <div class="form-group my-3">
+              <div class="input-field">
+              <label for="password">Password</label>
+              <input [(ngModel)]="form.password"  #password="ngModel"
+               name="password" type="password" class="form-control" id="password" placeholder="Enter password">
+              <small *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')"
+              class="text-danger">*Password is required</small>
+            </div>
+          </div>
+            <button class="btn btn-primary my-3">Submit</button>
+            <a routerLink="/register-page" class="text-primary mx-3" style="text-decoration: none;">Register</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>-->
 <div>
     <h1>Welcome Back</h1>
     <h3>Login Here</h3>
@@ -16,8 +51,10 @@
                name="password"
                [(ngModel)]="form.password"
                required
-               #username="ngModel">
+               #password="ngModel">
       </div>
       <button>Submit</button>
+      <button routerLink="/register-page">Register</button>
     </form>
   </div>
+

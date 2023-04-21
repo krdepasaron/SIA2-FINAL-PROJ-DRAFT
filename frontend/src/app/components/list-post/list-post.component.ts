@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Post } from 'src/app/models/post.model';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 @Component({
   selector: 'app-list-post',
@@ -9,7 +10,7 @@ import { Post } from 'src/app/models/post.model';
 })
 export class ListPostComponent {
 posts?: Post[] = [];
-constructor(private http: HttpClient) { }
+constructor(private http: HttpClient, private tokenStorage: TokenStorageService) { }
 
 ngOnInit(): void {
   this.initData();
@@ -23,6 +24,10 @@ initData(): void {
       console.log(this.posts);
     }
   })
+}
+
+logout(): void {
+  this.tokenStorage.signOut();
 }
 }
 //https://localhost:7086/api/Post

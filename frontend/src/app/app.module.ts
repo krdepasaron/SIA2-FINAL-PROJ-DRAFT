@@ -8,7 +8,7 @@ import { ListPostComponent } from './components/list-post/list-post.component';
 import { PostDetailComponent } from './components/post-detail/post-detail.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { RegisterPageComponent } from './components/register-page/register-page.component';
-import { AuthServiceService } from './services/auth.service';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +24,7 @@ import { AuthServiceService } from './services/auth.service';
     HttpClientModule, 
     FormsModule
   ],
-  providers: [AuthServiceService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

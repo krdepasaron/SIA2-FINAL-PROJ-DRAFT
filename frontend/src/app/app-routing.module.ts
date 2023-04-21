@@ -7,7 +7,7 @@ import { RegisterPageComponent } from './components/register-page/register-page.
 
 const routes: Routes = [
   {path: 'posts', component: ListPostComponent},
-  {path:'posts/:id', component: PostDetailComponent},
+  {path:'Post/:id', component: PostDetailComponent},
   { path: '', component: LoginPageComponent },
   { path: 'register-page', component: RegisterPageComponent }
 ];
